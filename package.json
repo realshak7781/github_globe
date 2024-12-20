@@ -1,0 +1,21 @@
+{
+  "name": "github-globe",
+  "version": "1.0.0",
+  "description": "A 3D globe project inspired by GitHub's homepage activity map.",
+  "scripts": {
+    "start": "webpack serve --open",
+    "build": "webpack"
+  },
+  "dependencies": {
+    "three": "^0.171.0",
+    "three-globe": "^2.37.4",
+    "three-glow-mesh": "^0.1.2"
+  },
+  "devDependencies": {
+    "webpack": "^5.97.1",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^5.2.0"
+  },
+  "author": "Your Name",
+  "license": "MIT"
+}
