@@ -5,10 +5,15 @@ module.exports = {
   entry: ["./src/index.js"],
   devtool: "inline-source-map",
   devServer: {
-    contentBase: "./dist",
-    open: false,
-    hot: true,
-    writeToDisk: true,
+    static: {
+      directory: path.resolve(__dirname, "dist"), // Replaces `contentBase`
+    },
+    open: false, // Prevents automatically opening the browser
+    hot: true, // Enables hot module replacement
+    devMiddleware: {
+      writeToDisk: true, // Enables writing files to disk
+    },
+    port: 3000, // Change to the desired port
   },
   plugins: [],
   module: {
@@ -18,7 +23,7 @@ module.exports = {
         loader: "file-loader",
         options: {
           name: "[path][name].[ext]",
-          outputPath: "./assets",
+          outputPath: "assets", // Defines where files will be placed in the output folder
         },
       },
     ],

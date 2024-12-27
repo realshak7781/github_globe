@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "A 3D globe project inspired by GitHub's homepage activity map.",
   "scripts": {
-    "start": "webpack serve --open",
-    "build": "webpack"
+    "start": "webpack serve --config webpack.dev.js",
+    "build": "webpack --config webpack.prod.js"
   },
   "dependencies": {
     "three": "^0.171.0",
