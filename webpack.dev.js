@@ -1,4 +1,5 @@
 const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
   mode: "development",
@@ -6,16 +7,20 @@ module.exports = {
   devtool: "inline-source-map",
   devServer: {
     static: {
-      directory: path.resolve(__dirname, "dist"), // Replaces `contentBase`
+      directory: path.resolve(__dirname, "dist"),
     },
-    open: false, // Prevents automatically opening the browser
-    hot: true, // Enables hot module replacement
+    open: false,
+    hot: true,
     devMiddleware: {
-      writeToDisk: true, // Enables writing files to disk
+      writeToDisk: true,
     },
-    port: 3000, // Change to the desired port
+    port: 3000,
   },
-  plugins: [],
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: "./index.html", // Reference your HTML template file
+    }),
+  ],
   module: {
     rules: [
       {
@@ -23,7 +28,7 @@ module.exports = {
         loader: "file-loader",
         options: {
           name: "[path][name].[ext]",
-          outputPath: "assets", // Defines where files will be placed in the output folder
+          outputPath: "assets",
         },
       },
     ],
