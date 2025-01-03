@@ -1,0 +1,14 @@
+# Handle line endings for cross-platform compatibility
+* text=auto
+
+# Treat binary files as binary
+*.jpg binary
+*.png binary
+*.gif binary
+
+# Mark JavaScript and CSS files as UTF-8
+*.js text
+*.css text
+
+# Exclude generated build files from diff
+dist/* -diff
