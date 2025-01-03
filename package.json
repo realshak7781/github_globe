@@ -4,7 +4,9 @@
   "description": "A 3D globe project inspired by GitHub's homepage activity map.",
   "scripts": {
     "start": "webpack serve --config webpack.dev.js",
-    "build": "webpack --config webpack.prod.js"
+    "build": "webpack --config webpack.prod.js",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "three": "^0.171.0",
@@ -12,11 +14,13 @@
     "three-glow-mesh": "^0.1.2"
   },
   "devDependencies": {
+    "gh-pages": "^6.3.0",
     "html-webpack-plugin": "^5.6.3",
     "webpack": "^5.97.1",
     "webpack-cli": "^5.1.4",
     "webpack-dev-server": "^5.2.0"
   },
+  "homepage": "https://realshak7781.github.io/github-globe",
   "author": "Your Name",
   "license": "MIT"
 }
